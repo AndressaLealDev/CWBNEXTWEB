@@ -4,21 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CWBNextWeb - Criamos Sites Profissionais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --azul: #1E90FF;
       --cinza: #f2f2f2;
       --preto: #1a1a1a;
+      --branco: #ffffff;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
     body { background-color: var(--cinza); color: var(--preto); scroll-behavior: smooth; overflow-x: hidden; }
+
     a { text-decoration: none; color: inherit; }
 
     /* HEADER */
     header {
       background-color: var(--preto);
-      color: white;
+      color: var(--branco);
       padding: 15px 30px;
       display: flex;
       justify-content: space-between;
@@ -30,7 +33,7 @@
     }
     header img { height: 50px; transition: transform 0.3s; }
     header img:hover { transform: scale(1.1); }
-    nav a { margin-left: 20px; font-weight: bold; color: white; transition: color 0.3s; }
+    nav a { margin-left: 20px; font-weight: bold; color: var(--branco); transition: color 0.3s; }
     nav a:hover { color: var(--azul); }
 
     /* HERO */
@@ -42,19 +45,19 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      color: white;
+      color: var(--branco);
       padding: 0 20px;
       opacity: 0;
       transform: translateY(50px);
       animation: fadeInUp 1s forwards;
       animation-delay: 0.3s;
     }
-    .hero h1 { font-size: 2.8em; margin-bottom: 20px; }
+    .hero h1 { font-size: 3em; margin-bottom: 20px; }
     .hero p { font-size: 1.5em; margin-bottom: 30px; }
     .hero a {
-      padding: 15px 30px;
+      padding: 15px 35px;
       background-color: var(--preto);
-      color: white;
+      color: var(--branco);
       font-weight: bold;
       border-radius: 5px;
       transition: 0.3s;
@@ -74,28 +77,39 @@
     .servicos h2, .portfolio h2, .contato h2 { font-size: 2.5em; margin-bottom: 40px; color: var(--preto); }
     .pacotes { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
     .pacote {
-      background-color: var(--cinza);
-      padding: 20px;
-      border-radius: 10px;
-      width: 300px;
+      background-color: var(--branco);
+      padding: 25px;
+      border-radius: 12px;
+      width: 280px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .pacote:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    .pacote:hover { transform: translateY(-10px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
     .pacote h3 { color: var(--azul); margin-bottom: 15px; }
     .pacote p { margin-bottom: 10px; }
 
     /* PORTFÓLIO */
-    .portfolio a { color: var(--azul); font-weight: bold; font-size: 1.2em; transition: color 0.3s; }
-    .portfolio a:hover { color: #0b5ea8; }
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .portfolio-grid img {
+      width: 100%;
+      border-radius: 12px;
+      transition: transform 0.3s, filter 0.3s;
+      cursor: pointer;
+    }
+    .portfolio-grid img:hover { transform: scale(1.05); filter: brightness(0.9); }
 
     /* CONTATO */
-    .contato { background-color: var(--preto); color: white; }
+    .contato { background-color: var(--preto); color: var(--branco); }
     .contato a {
       display: inline-block;
       margin: 10px;
-      padding: 15px 30px;
+      padding: 15px 35px;
       background-color: var(--azul);
-      color: white;
+      color: var(--branco);
       font-weight: bold;
       border-radius: 5px;
       transition: transform 0.3s, background-color 0.3s;
@@ -103,7 +117,7 @@
     .contato a:hover { background-color: #0b5ea8; transform: scale(1.05); }
 
     /* FOOTER */
-    footer { padding: 20px; background-color: var(--preto); color: white; text-align: center; }
+    footer { padding: 20px; background-color: var(--preto); color: var(--branco); text-align: center; }
 
     /* RESPONSIVO */
     @media(max-width: 768px){ .pacotes { flex-direction: column; align-items: center; } }
@@ -159,7 +173,12 @@
   <!-- PORTFÓLIO -->
   <section class="portfolio" id="portfolio">
     <h2>Portfólio</h2>
-    <p>Confira alguns dos nossos trabalhos: <a href="https://andressalealdev.github.io/Julio_Ramos/" target="_blank">Ver Portfólio</a></p>
+    <div class="portfolio-grid">
+      <img src="https://via.placeholder.com/400x300" alt="Exemplo 1">
+      <img src="https://via.placeholder.com/400x300" alt="Exemplo 2">
+      <img src="https://via.placeholder.com/400x300" alt="Exemplo 3">
+      <img src="https://via.placeholder.com/400x300" alt="Exemplo 4">
+    </div>
   </section>
 
   <!-- CONTATO -->
@@ -178,7 +197,6 @@
   <script>
     const sections = document.querySelectorAll('section');
     const options = { threshold: 0.2 };
-
     const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -188,7 +206,6 @@
         }
       });
     }, options);
-
     sections.forEach(section => { observer.observe(section); });
   </script>
 

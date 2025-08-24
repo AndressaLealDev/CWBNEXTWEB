@@ -5,32 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CWBNextWeb - Criamos Sites Profissionais</title>
   <style>
-    /* ===== VARIÁVEIS DE COR ===== */
     :root {
       --azul: #1E90FF;
       --cinza: #f2f2f2;
       --preto: #1a1a1a;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+    body { background-color: var(--cinza); color: var(--preto); scroll-behavior: smooth; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
 
-    body {
-      background-color: var(--cinza);
-      color: var(--preto);
-      scroll-behavior: smooth;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    /* ===== HEADER ===== */
+    /* HEADER */
     header {
       background-color: var(--preto);
       color: white;
@@ -43,18 +28,12 @@
       top: 0;
       z-index: 1000;
     }
+    header img { height: 50px; transition: transform 0.3s; }
+    header img:hover { transform: scale(1.1); }
+    nav a { margin-left: 20px; font-weight: bold; color: white; transition: color 0.3s; }
+    nav a:hover { color: var(--azul); }
 
-    header img {
-      height: 50px;
-    }
-
-    nav a {
-      margin-left: 20px;
-      font-weight: bold;
-      color: white;
-    }
-
-    /* ===== HERO ===== */
+    /* HERO */
     .hero {
       height: 100vh;
       background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--azul);
@@ -65,18 +44,13 @@
       text-align: center;
       color: white;
       padding: 0 20px;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.3s;
     }
-
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.5em;
-      margin-bottom: 30px;
-    }
-
+    .hero h1 { font-size: 2.8em; margin-bottom: 20px; }
+    .hero p { font-size: 1.5em; margin-bottom: 30px; }
     .hero a {
       padding: 15px 30px;
       background-color: var(--preto);
@@ -85,85 +59,37 @@
       border-radius: 5px;
       transition: 0.3s;
     }
+    .hero a:hover { background-color: var(--azul); }
 
-    .hero a:hover {
-      background-color: var(--azul);
-    }
-
-    /* ===== SEÇÃO SERVIÇOS ===== */
-    .servicos {
+    /* SEÇÕES */
+    section {
       padding: 80px 20px;
-      background-color: white;
-      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
     }
 
-    .servicos h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      color: var(--preto);
-    }
+    .servicos, .portfolio, .contato { text-align: center; }
 
-    .pacotes {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
+    /* SERVIÇOS */
+    .servicos h2, .portfolio h2, .contato h2 { font-size: 2.5em; margin-bottom: 40px; color: var(--preto); }
+    .pacotes { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
     .pacote {
       background-color: var(--cinza);
       padding: 20px;
       border-radius: 10px;
       width: 300px;
-      transition: 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+    .pacote:hover { transform: translateY(-5px); box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+    .pacote h3 { color: var(--azul); margin-bottom: 15px; }
+    .pacote p { margin-bottom: 10px; }
 
-    .pacote:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
+    /* PORTFÓLIO */
+    .portfolio a { color: var(--azul); font-weight: bold; font-size: 1.2em; transition: color 0.3s; }
+    .portfolio a:hover { color: #0b5ea8; }
 
-    .pacote h3 {
-      color: var(--azul);
-      margin-bottom: 15px;
-    }
-
-    .pacote p {
-      margin-bottom: 10px;
-    }
-
-    /* ===== PORTFÓLIO ===== */
-    .portfolio {
-      padding: 80px 20px;
-      text-align: center;
-      background-color: var(--cinza);
-    }
-
-    .portfolio h2 {
-      font-size: 2.5em;
-      margin-bottom: 40px;
-      color: var(--preto);
-    }
-
-    .portfolio a {
-      color: var(--azul);
-      font-weight: bold;
-      font-size: 1.2em;
-    }
-
-    /* ===== CONTATO ===== */
-    .contato {
-      padding: 80px 20px;
-      background-color: var(--preto);
-      color: white;
-      text-align: center;
-    }
-
-    .contato h2 {
-      font-size: 2.5em;
-      margin-bottom: 30px;
-    }
-
+    /* CONTATO */
+    .contato { background-color: var(--preto); color: white; }
     .contato a {
       display: inline-block;
       margin: 10px;
@@ -172,28 +98,18 @@
       color: white;
       font-weight: bold;
       border-radius: 5px;
-      transition: 0.3s;
+      transition: transform 0.3s, background-color 0.3s;
     }
+    .contato a:hover { background-color: #0b5ea8; transform: scale(1.05); }
 
-    .contato a:hover {
-      background-color: #0b5ea8;
-    }
+    /* FOOTER */
+    footer { padding: 20px; background-color: var(--preto); color: white; text-align: center; }
 
-    /* ===== FOOTER ===== */
-    footer {
-      padding: 20px;
-      background-color: var(--preto);
-      color: white;
-      text-align: center;
-    }
+    /* RESPONSIVO */
+    @media(max-width: 768px){ .pacotes { flex-direction: column; align-items: center; } }
 
-    /* ===== RESPONSIVO ===== */
-    @media(max-width: 768px){
-      .pacotes {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
+    /* ANIMAÇÕES */
+    @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -210,8 +126,8 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1>Eu confio a você</h1>
-    <p>Transforme seu negócio com um site moderno e profissional</p>
+    <h1>Transforme sua presença online.</h1>
+    <p>Impressione seus clientes com um site moderno e profissional</p>
     <a href="#contato">Vamos Começar</a>
   </section>
 
@@ -257,6 +173,24 @@
   <footer>
     © 2025 CWBNextWeb. Todos os direitos reservados.
   </footer>
+
+  <!-- SCRIPT PARA ANIMAÇÃO AO SCROLL -->
+  <script>
+    const sections = document.querySelectorAll('section');
+    const options = { threshold: 0.2 };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    sections.forEach(section => { observer.observe(section); });
+  </script>
 
 </body>
 </html>

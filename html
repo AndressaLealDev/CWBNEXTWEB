@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CWBNextWeb - Criamos Sites Profissionais</title>
+  <style>
+    /* ===== VARIÁVEIS DE COR ===== */
+    :root {
+      --azul: #1E90FF;
+      --cinza: #f2f2f2;
+      --preto: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: var(--cinza);
+      color: var(--preto);
+      scroll-behavior: smooth;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: var(--preto);
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: bold;
+      color: white;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--azul);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      margin-bottom: 30px;
+    }
+
+    .hero a {
+      padding: 15px 30px;
+      background-color: var(--preto);
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .hero a:hover {
+      background-color: var(--azul);
+    }
+
+    /* ===== SEÇÃO SERVIÇOS ===== */
+    .servicos {
+      padding: 80px 20px;
+      background-color: white;
+      text-align: center;
+    }
+
+    .servicos h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: var(--preto);
+    }
+
+    .pacotes {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .pacote {
+      background-color: var(--cinza);
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+      transition: 0.3s;
+    }
+
+    .pacote:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .pacote h3 {
+      color: var(--azul);
+      margin-bottom: 15px;
+    }
+
+    .pacote p {
+      margin-bottom: 10px;
+    }
+
+    /* ===== PORTFÓLIO ===== */
+    .portfolio {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: var(--cinza);
+    }
+
+    .portfolio h2 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: var(--preto);
+    }
+
+    .portfolio a {
+      color: var(--azul);
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    /* ===== CONTATO ===== */
+    .contato {
+      padding: 80px 20px;
+      background-color: var(--preto);
+      color: white;
+      text-align: center;
+    }
+
+    .contato h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+
+    .contato a {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      background-color: var(--azul);
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .contato a:hover {
+      background-color: #0b5ea8;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 20px;
+      background-color: var(--preto);
+      color: white;
+      text-align: center;
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media(max-width: 768px){
+      .pacotes {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="logo.png" alt="CWBNextWeb Logo">
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Eu confio a você</h1>
+    <p>Transforme seu negócio com um site moderno e profissional</p>
+    <a href="#contato">Vamos Começar</a>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="servicos" id="servicos">
+    <h2>Pacotes de Sites</h2>
+    <div class="pacotes">
+      <div class="pacote">
+        <h3>Básico</h3>
+        <p>Site 1 página</p>
+        <p>Responsivo</p>
+        <p>Integração WhatsApp</p>
+      </div>
+      <div class="pacote">
+        <h3>Profissional</h3>
+        <p>Até 5 páginas</p>
+        <p>Formulário de contato</p>
+        <p>SEO Básico</p>
+      </div>
+      <div class="pacote">
+        <h3>Premium</h3>
+        <p>Site completo + Blog</p>
+        <p>Integração Google Maps</p>
+        <p>Design exclusivo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
+  <section class="portfolio" id="portfolio">
+    <h2>Portfólio</h2>
+    <p>Confira alguns dos nossos trabalhos: <a href="https://andressalealdev.github.io/Julio_Ramos/" target="_blank">Ver Portfólio</a></p>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <h2>Contato</h2>
+    <a href="https://wa.me/5591999999999" target="_blank">WhatsApp</a>
+    <a href="https://instagram.com/seuinstagram" target="_blank">Instagram</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 CWBNextWeb. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>

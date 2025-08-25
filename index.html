@@ -24,9 +24,10 @@
     }
     .btn-primary:hover {
       background: #0056b3;
+      transform: scale(1.05);
     }
     .logo-text {
-      color: black; /* Logo preto */
+      color: white; /* Logo branco */
       font-weight: bold;
       font-size: 2rem;
       text-transform: uppercase;
@@ -34,25 +35,37 @@
     .top-icons i {
       font-size: 1.8rem;
       margin: 0 12px;
-      color: #000; /* Preto para combinar com o logo */
+      color: #fff;
       transition: 0.3s;
     }
     .top-icons i:hover {
-      color: #007BFF;
+      color: #00bfff;
+      transform: scale(1.2) rotate(10deg);
+    }
+    /* Scroll animations */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
   <!-- Header -->
-  <header class="bg-white shadow-lg fixed w-full z-50">
+  <header class="bg-black/90 shadow-lg fixed w-full z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="logo-text">CWBNEXTWEB</h1>
-      <nav class="hidden md:flex space-x-8 text-gray-900 font-medium">
+      <nav class="hidden md:flex space-x-8 text-white font-medium">
         <a href="#home" class="hover:text-blue-400">Início</a>
         <a href="#sobre" class="hover:text-blue-400">Sobre</a>
         <a href="#servicos" class="hover:text-blue-400">Serviços</a>
         <a href="#portfolio" class="hover:text-blue-400">Portfólio</a>
+        <a href="#planos" class="hover:text-blue-400">Planos</a>
         <a href="#contato" class="hover:text-blue-400">Contato</a>
       </nav>
     </div>
@@ -60,7 +73,7 @@
 
   <!-- Hero -->
   <section id="home" class="gradient-bg text-white text-center min-h-screen flex flex-col justify-center items-center px-6">
-    <div class="flex items-center justify-center space-x-4 mb-6">
+    <div class="flex items-center justify-center space-x-4 mb-6 top-icons">
       <i class="fas fa-chart-line"></i>
       <i class="fas fa-laptop-code"></i>
       <i class="fas fa-rocket"></i>
@@ -72,8 +85,8 @@
 
   <!-- Sobre -->
   <section id="sobre" class="container mx-auto py-20 px-6 text-center">
-    <h2 class="text-4xl font-bold text-blue-600 mb-6">Quem Somos</h2>
-    <p class="text-gray-700 max-w-3xl mx-auto">
+    <h2 class="text-4xl font-bold text-blue-600 mb-6 fade-up">Quem Somos</h2>
+    <p class="text-gray-700 max-w-3xl mx-auto fade-up">
       A <strong>CWB NEXTWEB</strong> é uma agência digital especializada em desenvolvimento de sites profissionais, sistemas web e identidade visual. 
       Nosso objetivo é colocar a sua empresa em destaque no mundo digital.
     </p>
@@ -82,17 +95,17 @@
   <!-- Serviços -->
   <section id="servicos" class="bg-gray-100 py-20">
     <div class="container mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold text-blue-600 mb-10">Nossos Serviços</h2>
+      <h2 class="text-4xl font-bold text-blue-600 mb-10 fade-up">Nossos Serviços</h2>
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 shadow-lg rounded-xl hover:scale-105 transition">
+        <div class="bg-white p-8 shadow-lg rounded-xl hover:scale-105 transition fade-up">
           <h3 class="text-xl font-semibold mb-4">Criação de Sites</h3>
           <p class="text-gray-600">Sites modernos, rápidos e responsivos para sua empresa ter destaque online.</p>
         </div>
-        <div class="bg-white p-8 shadow-lg rounded-xl hover:scale-105 transition">
+        <div class="bg-white p-8 shadow-lg rounded-xl hover:scale-105 transition fade-up">
           <h3 class="text-xl font-semibold mb-4">Lojas Virtuais</h3>
           <p class="text-gray-600">Venda seus produtos online com segurança e design otimizado para conversão.</p>
         </div>
-        <div class="bg-white p-8 shadow-lg rounded-xl hover:scale-105 transition">
+        <div class="bg-white p-8 shadow-lg rounded-xl hover:scale-105 transition fade-up">
           <h3 class="text-xl font-semibold mb-4">Identidade Visual</h3>
           <p class="text-gray-600">Design estratégico que transmite confiança e profissionalismo.</p>
         </div>
@@ -102,20 +115,68 @@
 
   <!-- Portfólio -->
   <section id="portfolio" class="container mx-auto py-20 px-6 text-center">
-    <h2 class="text-4xl font-bold text-blue-600 mb-10">Portfólio</h2>
+    <h2 class="text-4xl font-bold text-blue-600 mb-10 fade-up">Portfólio</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="bg-gray-800 text-white p-6 rounded-lg shadow hover:scale-105 transition">Projeto 1</div>
-      <div class="bg-gray-800 text-white p-6 rounded-lg shadow hover:scale-105 transition">Projeto 2</div>
-      <div class="bg-gray-800 text-white p-6 rounded-lg shadow hover:scale-105 transition">Projeto 3</div>
+      <div class="bg-gray-800 text-white p-6 rounded-lg shadow hover:scale-105 transition fade-up">Projeto 1</div>
+      <div class="bg-gray-800 text-white p-6 rounded-lg shadow hover:scale-105 transition fade-up">Projeto 2</div>
+      <div class="bg-gray-800 text-white p-6 rounded-lg shadow hover:scale-105 transition fade-up">Projeto 3</div>
+    </div>
+  </section>
+
+  <!-- Planos de Sites -->
+  <section id="planos" class="py-20 bg-gray-100 text-center">
+    <h2 class="text-4xl font-bold text-blue-600 mb-12 fade-up">Nossos Planos de Sites</h2>
+    <div class="container mx-auto grid md:grid-cols-3 gap-8 px-6">
+      
+      <!-- Básico -->
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:scale-105 transition fade-up">
+        <h3 class="text-2xl font-semibold mb-4">Básico</h3>
+        <p class="text-gray-600 mb-4">Site simples para apresentar sua empresa online.</p>
+        <p class="text-xl font-bold mb-4">R$ 500</p>
+        <ul class="text-gray-700 mb-6 text-left list-disc list-inside">
+          <li>Até 5 páginas</li>
+          <li>Design Responsivo</li>
+          <li>Formulário de contato</li>
+        </ul>
+        <a href="#contato" class="btn-primary">Contratar</a>
+      </div>
+
+      <!-- Intermediário -->
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:scale-105 transition fade-up">
+        <h3 class="text-2xl font-semibold mb-4">Intermediário</h3>
+        <p class="text-gray-600 mb-4">Site completo com algumas funcionalidades extras.</p>
+        <p class="text-xl font-bold mb-4">R$ 1.200</p>
+        <ul class="text-gray-700 mb-6 text-left list-disc list-inside">
+          <li>Até 10 páginas</li>
+          <li>Design Responsivo</li>
+          <li>Formulário de contato + WhatsApp</li>
+        </ul>
+        <a href="#contato" class="btn-primary">Contratar</a>
+      </div>
+
+      <!-- Premium -->
+      <div class="bg-white p-8 rounded-xl shadow-lg hover:scale-105 transition fade-up">
+        <h3 class="text-2xl font-semibold mb-4">Premium</h3>
+        <p class="text-gray-600 mb-4">Site avançado com layout mais personalizado.</p>
+        <p class="text-xl font-bold mb-4">R$ 2.000</p>
+        <ul class="text-gray-700 mb-6 text-left list-disc list-inside">
+          <li>Até 15 páginas</li>
+          <li>Design Responsivo e personalizado</li>
+          <li>Formulário de contato + WhatsApp</li>
+          <li>Blog simples</li>
+        </ul>
+        <a href="#contato" class="btn-primary">Contratar</a>
+      </div>
+
     </div>
   </section>
 
   <!-- Contato -->
   <section id="contato" class="gradient-bg text-white py-20 text-center">
-    <h2 class="text-4xl font-bold mb-6">Entre em Contato</h2>
-    <p class="mb-6">Vamos criar algo incrível para sua empresa!</p>
+    <h2 class="text-4xl font-bold mb-6 fade-up">Entre em Contato</h2>
+    <p class="mb-6 fade-up">Vamos criar algo incrível para sua empresa!</p>
     <a href="https://wa.me/5541999999999" target="_blank" class="btn-primary">Fale no WhatsApp</a>
-    <div class="mt-6 flex justify-center space-x-6">
+    <div class="mt-6 flex justify-center space-x-6 fade-up">
       <a href="https://www.instagram.com/seuinsta" target="_blank" class="hover:text-blue-400">Instagram</a>
       <a href="mailto:contato@cwbnextweb.com" class="hover:text-blue-400">E-mail</a>
     </div>
@@ -126,7 +187,31 @@
     <p>&copy; 2025 CWB NEXTWEB - Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Scripts -->
+  <script>
+    // Scroll suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animação de elementos ao scroll
+    const faders = document.querySelectorAll('.fade-up');
+    const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+      entries.forEach(entry => {
+        if(!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        appearOnScroll.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+  </script>
+
 </body>
 </html>
-
-

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CWB NEXTWEB - Transforme sua presença digital</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome para ícones -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -23,15 +25,30 @@
     .btn-primary:hover {
       background: #0056b3;
     }
+    .logo-text {
+      color: black; /* Logo preto */
+      font-weight: bold;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+    .top-icons i {
+      font-size: 1.8rem;
+      margin: 0 12px;
+      color: #000; /* Preto para combinar com o logo */
+      transition: 0.3s;
+    }
+    .top-icons i:hover {
+      color: #007BFF;
+    }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
 
   <!-- Header -->
-  <header class="bg-black/90 shadow-lg fixed w-full z-50">
+  <header class="bg-white shadow-lg fixed w-full z-50">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <img src="cwbnextweb.png" alt="CWB NEXTWEB" class="h-12">
-      <nav class="hidden md:flex space-x-8 text-white font-medium">
+      <h1 class="logo-text">CWBNEXTWEB</h1>
+      <nav class="hidden md:flex space-x-8 text-gray-900 font-medium">
         <a href="#home" class="hover:text-blue-400">Início</a>
         <a href="#sobre" class="hover:text-blue-400">Sobre</a>
         <a href="#servicos" class="hover:text-blue-400">Serviços</a>
@@ -43,6 +60,11 @@
 
   <!-- Hero -->
   <section id="home" class="gradient-bg text-white text-center min-h-screen flex flex-col justify-center items-center px-6">
+    <div class="flex items-center justify-center space-x-4 mb-6">
+      <i class="fas fa-chart-line"></i>
+      <i class="fas fa-laptop-code"></i>
+      <i class="fas fa-rocket"></i>
+    </div>
     <h1 class="text-5xl md:text-6xl font-bold">Transforme sua Presença Online</h1>
     <p class="mt-6 text-lg max-w-2xl">Na <strong>CWB NEXTWEB</strong>, criamos sites modernos e interativos que impressionam seus clientes e fortalecem sua marca.</p>
     <a href="#contato" class="btn-primary mt-8">Solicite um Orçamento</a>
@@ -106,4 +128,5 @@
 
 </body>
 </html>
+
 
